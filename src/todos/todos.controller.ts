@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, ParseIntPipe, Post, Request, UseGuards } 
 import { TodoEntity } from './entity/TodoEntity';
 import { TodosService } from './todos.service';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { AuthGuard } from '@nestjs/passport';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('todos')
 export class TodosController {
@@ -10,7 +10,7 @@ export class TodosController {
         private readonly todosService: TodosService
     ){}
 
-    @UseGuards(AuthGuard('jwt'))
+    @UseGuards(JwtAuthGuard)
     @Get()
     async getAllTodosByUserId(@Request() req: any): Promise<TodoEntity[]> {
         return await this.todosService.getAllTodosByUserId(req.user.id)
