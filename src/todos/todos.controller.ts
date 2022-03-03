@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Request, UseGuards } from '@nestjs/common';
-import { TodoEntity } from './entity/TodoEntity';
+import { TodoEntity } from './entity/Todos-Entity';
 import { TodosService } from './todos.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';

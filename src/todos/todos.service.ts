@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TodoEntity } from './entity/TodoEntity';
+import { TodoEntity } from './entity/Todos-Entity';
 import { CreateTaskDto } from './dto/create-task.dto';
 
 @Injectable()

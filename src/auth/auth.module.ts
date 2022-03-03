@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthEntity } from './entity/AuthEntity';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UsersModule } from 'src/users/users.module';
@@ -12,7 +11,6 @@ import { jwtConstants } from 'src/shared/utils/constants';
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([AuthEntity]),
         UsersModule,
         PassportModule,
         JwtModule.register({
@@ -21,6 +19,7 @@ import { jwtConstants } from 'src/shared/utils/constants';
         }),
     ],
     controllers: [AuthController],
-    providers: [AuthService, LocalStrategy, JwtStrategy,]
+    providers: [AuthService, LocalStrategy, JwtStrategy,],
+    exports: [AuthService]
 })
 export class AuthModule {}

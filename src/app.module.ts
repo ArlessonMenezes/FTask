@@ -4,6 +4,7 @@ import { join } from 'path/posix';
 import { UsersModule } from './users/users.module';
 import { TodosModule } from './todos/todos.module';
 import { AuthModule } from './auth/auth.module';
+import { TokensModule } from './tokens/tokens.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     TodosModule,
     AuthModule,
+    TokensModule,
 ],
   controllers: [],
   providers: [],

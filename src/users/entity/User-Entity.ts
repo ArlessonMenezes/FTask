@@ -1,5 +1,5 @@
 import { BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { TodoEntity } from '../../todos/entity/TodoEntity';
+import { TodoEntity } from '../../todos/entity/Todos-Entity';
 import { hashSync } from 'bcrypt';
 
 @Entity('users')

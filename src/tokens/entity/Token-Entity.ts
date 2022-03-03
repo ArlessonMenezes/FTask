@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('auth')
-export class AuthEntity {
+@Entity('tokens')
+export class TokenEntity {
     @PrimaryGeneratedColumn('increment')
     id: number;
 

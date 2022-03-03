@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { UserEntity } from 'src/users/entity/UserEntity';
+import { UserEntity } from 'src/users/entity/User-Entity';
 import { UsersService } from 'src/users/users.service';
 import { compareSync } from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
