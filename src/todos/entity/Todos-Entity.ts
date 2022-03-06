@@ -1,5 +1,6 @@
 import { UserEntity } from "src/users/entity/User-Entity";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TaskStatus } from "../enum/task-status.enum";
 
 @Entity('todos')
 export class TodoEntity {
@@ -9,8 +10,8 @@ export class TodoEntity {
     @Column({ type: 'text', nullable: false })
     description: string;
 
-    @Column({ name: 'is-completed', type: 'boolean', default: false })
-    isCompleted: boolean;
+    @Column({ default: TaskStatus.OPEN })
+    status: TaskStatus;
 
     @Column({ name: 'user_id', type: 'integer' })
     userId: number
